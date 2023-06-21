@@ -5,7 +5,6 @@ interface Location {
 }
 
 const UseMemo2: React.FC = () => {
-  // useState에 타입 정의
   const [number, setNumber] = useState<number>(0);
   const [isKorea, setIsKorea] = useState<boolean>(true);
 
