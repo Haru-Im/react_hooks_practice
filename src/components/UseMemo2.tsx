@@ -1,6 +1,11 @@
 import { ChangeEvent, useEffect, useMemo, useState } from "react";
 
-export const UseMemo2: React.FC = () => {
+interface Location {
+  country: string;
+}
+
+const UseMemo2: React.FC = () => {
+  // useState에 타입 정의
   const [number, setNumber] = useState<number>(0);
   const [isKorea, setIsKorea] = useState<boolean>(true);
 
@@ -12,15 +17,11 @@ export const UseMemo2: React.FC = () => {
     setIsKorea((prev) => !prev);
   };
 
-  const location = useMemo(() => {
+  const location = useMemo<Location>(() => {
     return {
       country: isKorea ? "한국" : "외국",
     };
   }, [isKorea]);
-
-  // const location = {
-  //   country: isKorea ? "한국" : "외국",
-  // };
 
   useEffect(() => {
     console.log("useEffect 실행!");
@@ -35,3 +36,5 @@ export const UseMemo2: React.FC = () => {
     </div>
   );
 };
+
+export default UseMemo2;
