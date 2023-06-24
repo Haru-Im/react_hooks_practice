@@ -7,11 +7,11 @@ export const Count = () => {
   // Debounce 사용 시
   const debouncedCountUp = _.debounce(
     () => setCount((prevCount) => prevCount + 1),
-    300
+    1000
   );
   const debouncedCountDown = _.debounce(
     () => setCount((prevCount) => prevCount - 1),
-    300
+    1000
   );
 
   // Debounce를 사용하지 않았을 때
