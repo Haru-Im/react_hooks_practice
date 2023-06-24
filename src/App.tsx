@@ -4,10 +4,15 @@ import { UseMemo1 } from "./components/UseMemo1";
 import UseMemo2 from "./components/UseMemo2";
 import { UseRefDOM } from "./components/UseRefDOM";
 import UseRefInputDOM from "./components/UseRefInputDOM";
-import { Count } from "./components/timer";
+import { Count, Throttle } from "./components/timer";
 
 const App: React.FC = () => {
-  return <Count />;
+  return (
+    <>
+      <Count />
+      <Throttle />
+    </>
+  );
 };
 
 export default App;
